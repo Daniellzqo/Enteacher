@@ -21,7 +21,23 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="api\add_list.py" />
+    <Compile Include="database\edit_data_list.py" />
     <Compile Include="main.py" />
+    <Compile Include="pages\main_page.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="api\" />
+    <Folder Include="database\" />
+    <Folder Include="lists\" />
+    <Folder Include="pages\" />
+    <Folder Include="templates\" />
+    <Folder Include="results\" />
+    <Folder Include="settings\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="templates\add_list.html" />
+    <Content Include="templates\index.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Enteacher</title>
+    <style>
+        .app_name {
+            text-align: center; 
+            padding-top: 70px;
+            font-size: 38px; 
+            font-family: Arial, sans-serif; 
+            color: rgb(29, 138, 216);
+            font-weight: bold;
+        }
+
+        .app_bacq{
+            background-color: rgb(191, 172, 107)
+        }
+        .answer_box {
+            border: 2px solid #ccc; 
+            padding: 20px; 
+            width: 300px; 
+            margin: 50px auto; 
+            display: flex;
+            flex-direction: column; 
+            
+            border-radius: 8px; 
+        }
+        .input_cont {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            align-items: center;
+
+        }
+
+        .answer_box label {
+                text-align: center;
+                margin: 0px;
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+            }
+
+        .answer_box input {
+            font-size: 14px;
+            padding-bottom: 10px;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            width: 75%;
+            }
+
+        .button_next{
+            border: none;
+            width: 25%;
+            
+        }
+
+    </style>
+</head>
+<body class="app_bacq">
+    <div class="app_name">Enteacher</div>
+
+    <div class="answer_box">
+        <div class="input_cont">
+            <label for="question">Word</label>
+            <input id="question" name="question" />
+        </div>
+        <div class="input_cont">
+            <label for="answer">Answer:</label>
+            <input id="answer" name="answer" />
+        </div>
+
+        <div class="input_cont">
+            <button class="button_next">Next</button>
+        </div>
+
+    </div>
+
+</body>
+</html>

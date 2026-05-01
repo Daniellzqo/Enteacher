@@ -2,72 +2,124 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium&display=swap" rel="stylesheet">
     <meta charset="utf-8" />
     <title>Enteacher</title>
     <style>
         .app_name {
-            text-align: center; 
-            padding-top: 70px;
-            font-size: 38px; 
-            font-family: Arial, sans-serif; 
-            color: rgb(29, 138, 216);
+            padding-left: 45px;
+            font-size: 38px;
+            font-family: Oxanium;
+            color: rgb(1, 74, 173);
             font-weight: bold;
         }
 
-        .app_bacq{
-            background-color: rgb(191, 172, 107)
+        .topdiv {
+            padding-top: 70px;
         }
+
+        .app_bacq {
+            background-color: #2a3350;
+            margin: 0;
+        }
+
         .answer_box {
-            border: 2px solid #ccc; 
-            padding: 20px; 
-            width: 300px; 
-            margin: 50px auto; 
+            border: 1px solid #3a4f7a;
+            background-color: #1e2d4a;
+            padding: 42px 40px;
+            width: 300px;
+            margin: 50px auto;
             display: flex;
-            flex-direction: column; 
-            
-            border-radius: 8px; 
+            flex-direction: column;
+            border-radius: 12px;
         }
+
         .input_cont {
             display: flex;
             flex-direction: column;
             margin-bottom: 20px;
-            align-items: center;
-
+            align-items: stretch;
         }
 
         .answer_box label {
-                text-align: center;
-                margin: 0px;
-                font-family: Arial, sans-serif;
-                font-size: 14px;
-            }
+            text-align: left;
+            margin: 0px 0px 6px 0px;
+            font-family: Arial, sans-serif;
+            color: #8fa8d0;
+            font-size: 13px;
+        }
 
         .answer_box input {
             font-size: 14px;
-            padding-bottom: 10px;
-            border: 1px solid #aaa;
-            border-radius: 4px;
-            width: 75%;
-            }
-
-        .button_next{
-            border: none;
-            width: 25%;
-            
+            background-color: #253555;
+            border: 1px solid #3a4f7a;
+            border-radius: 7px;
+            padding: 9px 12px;
+            color: #c8d8f0;
+            width: 100%;
+            box-sizing: border-box;
+            outline: none;
         }
 
+        .button_next {
+            background-color: #4a7cdc;
+            color: #ffffff;
+            border: none;
+            width: 100%;
+            padding: 10px;
+            border-radius: 7px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 12px;
+        }
+
+        .top_bar {
+            background-color: #1a2540;
+            height: 60px;
+            margin: 0px;
+            display: flex;
+            align-items: center;
+        }
+
+        .login_cont {
+            
+            margin-left: auto;
+            margin-right: 30px;
+        }
+        .login_button {
+            background-color: #4a7cdc;
+            color: rgb(245, 245, 245);
+            padding: 8px 18px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .login_button {
+            transition: transform 0.2s ease;
+        }
+
+            .login_button:hover {
+                transform: scale(1.05);
+            }
+
+        
     </style>
 </head>
 <body class="app_bacq">
-    <div class="app_name">Enteacher</div>
-
+    <div class="top_bar">
+        <div class="app_name"><span style="color: rgb(245, 245, 245)">En</span>teacher</div>
+        <div class="login_cont"><button class="login_button">Login</button></div>
+    </div>
+    <div class="topdiv"></div>
     <div class="answer_box">
         <div class="input_cont">
             <label for="question">Word</label>
             <input id="question" name="question" />
         </div>
         <div class="input_cont">
-            <label for="answer">Answer:</label>
+            <label for="answer">Answer</label>
             <input id="answer" name="answer" />
         </div>
 

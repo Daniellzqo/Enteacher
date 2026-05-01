@@ -22,6 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="api\add_list.py" />
+    <Compile Include="api\show_list.py" />
     <Compile Include="database\edit_data_list.py" />
     <Compile Include="main.py" />
     <Compile Include="pages\main_page.py" />
@@ -38,6 +39,7 @@
   <ItemGroup>
     <Content Include="templates\add_list.html" />
     <Content Include="templates\index.html" />
+    <Content Include="templates\show_list.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

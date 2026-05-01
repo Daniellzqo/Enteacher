@@ -5,11 +5,11 @@ from fastapi.templating import Jinja2Templates
 router = APIRouter()
 templates = Jinja2Templates(directory="templates")
 
-@router.get("/")
-def main_page(request: Request):
+@router.get("/show_list")
+def show_page(request: Request):
     return templates.TemplateResponse(
         request=request,
-        name="index.html",
+        name="show_list.html",
         context={}
     )
 

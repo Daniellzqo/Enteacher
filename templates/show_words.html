@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div class="word_box">All words</div>
+
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Word</th>
+            <th>Language</th>
+        </tr>
+
+        {% for wi in words %}
+        <tr>
+            <td>{{ wi.id }}</td>
+            <td>{{ wi.word }}</td>
+            <td>{{ wi.lang }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

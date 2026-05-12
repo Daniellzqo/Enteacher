@@ -8,6 +8,33 @@
 <body>
     <div class="list_box">All lists</div>
 
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>ListName</th>
+        </tr>
 
+        {% for li in lists %}
+        <tr onclick="loadWords({{ li.id }})" style="cursor:pointer;">
+            <td>{{ li.id }}</td>
+            <td>{{ li.listname }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+<div id="words_box"></div>
 </body>
 </html>
+<script>
+
+    async function loadWords(id) {
+
+        const response = await fetch("/show_words/" + id)
+
+        const html = await response.text()
+
+
+        document.getElementById("words_box").innerHTML = html
+    }
+
+</script>

@@ -20,9 +20,9 @@ def show_page(request: Request):
 )
 
 @router.get("/show_words/{id}")
-def show_words(request: Request, id: int):
+def show_words(request: Request, id: int, lang: str):
 
-    words = get_words(id)
+    words = get_words(id, lang)
 
     return templates.TemplateResponse(
     request=request,

@@ -1,163 +1,193 @@
 <!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium&display=swap" rel="stylesheet">
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Enteacher</title>
 
     <style>
-
-        
-        .app_name {
-            padding-left: 45px;
-            font-size: 38px;
-            font-family: Oxanium;
-            color: rgb(1, 74, 173);
-            font-weight: bold;
-        }
-
-
-        .topdiv {
-            padding-top: 70px;
-        }
-
-
-        .app_bacq {
-            background-color: #2a3350;
+        * {
             margin: 0;
-        }
-
-
-        .answer_box {
-            border: 1px solid #3a4f7a;
-            background-color: #1e2d4a;
-            padding: 42px 40px;
-            width: 300px;
-            margin: 50px auto;
-            display: flex;
-            flex-direction: column;
-            border-radius: 12px;
-        }
-
-
-        .input_cont {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 20px;
-            align-items: stretch;
-        }
-
-
-        .answer_box label {
-            text-align: left;
-            margin: 0px 0px 6px 0px;
-            font-family: Arial, sans-serif;
-            color: #8fa8d0;
-            font-size: 13px;
-        }
-
-
-        .answer_box input {
-            font-size: 14px;
-            background-color: #253555;
-            border: 1px solid #3a4f7a;
-            border-radius: 7px;
-            padding: 9px 12px;
-            color: #c8d8f0;
-            width: 100%;
+            padding: 0;
             box-sizing: border-box;
-            outline: none;
+            font-family: "Segoe UI", sans-serif;
         }
 
-
-        .button_next {
-            background-color: #4a7cdc;
-            color: #ffffff;
-            border: none;
-            width: 100%;
-            padding: 10px;
-            border-radius: 7px;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            margin-top: 12px;
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1f2a44 0%, #27355c 100%);
+            display: flex;
+            flex-direction: column;
+            color: #fff;
         }
 
-
+        /* TOP BAR */
         .top_bar {
-            background-color: #1a2540;
-            height: 60px;
-            margin: 0px;
+            height: 72px;
             display: flex;
             align-items: center;
+            padding: 0 30px;
+            background: rgba(23, 32, 57, 0.95);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 10px 20px rgba(0,0,0,.25);
         }
 
+        .app_name {
+            font-size: 34px;
+            font-family: Oxanium, sans-serif;
+            font-weight: bold;
+            color: #5d8eff;
+        }
 
-        .login_cont {
-            
+            .app_name span {
+                color: white;
+            }
+
+        .nav_buttons {
             margin-left: auto;
-            margin-right: 30px;
+            display: flex;
+            gap: 12px;
         }
 
-
         .login_button {
-            background-color: #4a7cdc;
-            color: rgb(245, 245, 245);
-            padding: 8px 18px;
-            border-radius: 6px;
+            background: linear-gradient(135deg, #5d8eff, #4c6fff);
+            color: white;
             border: none;
+            border-radius: 10px;
+            padding: 10px 18px;
             cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: .2s;
+        }
+
+            .login_button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 20px rgba(76,111,255,.25);
+            }
+
+        /* CONTENT */
+        .page_content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 500px;
+            background: rgba(23, 32, 57, 0.95);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25), 0 0 20px rgba(76, 125, 255, 0.08);
+        }
+
+        .title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #9fb0d6;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 18px;
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #b9c7e6;
+        }
+
+        input {
+            height: 46px;
+            border: 1px solid #3b4d79;
+            border-radius: 10px;
+            background: #1a2542;
+            color: white;
+            padding: 0 14px;
+            font-size: 15px;
+            transition: .2s;
+        }
+
+            input:focus {
+                outline: none;
+                border-color: #5d8eff;
+                box-shadow: 0 0 0 3px rgba(93,142,255,.15);
+            }
+
+        .button_next {
+            width: 100%;
+            height: 50px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #5d8eff, #4c6fff);
+            color: white;
             font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .2s;
         }
 
-
-        .login_button {
-            transition: transform 0.2s ease;
-        }
-
-
-
-        .login_button:hover {
-            transform: scale(1.05);
-        }
-
-        
+            .button_next:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 20px rgba(76,111,255,.25);
+            }
     </style>
-
 </head>
-<body class="app_bacq">
+
+<body>
 
     <div class="top_bar">
+        <div class="app_name">
+            <span>En</span>teacher
+        </div>
 
-        <div class="app_name"><span style="color: rgb(245, 245, 245)">En</span>teacher</div>
-        <div class="login_cont"><button onclick="openLists()" class="login_button">Lists</button></div>
-        <div class="login_cont"><button class="login_button">Login</button></div>
+        <div class="nav_buttons">
+            <button onclick="openLists()" class="login_button">Lists</button>
+            <button class="login_button">Login</button>
+        </div>
     </div>
 
-    <div class="topdiv"></div>
-    <div class="answer_box">
+    <div class="page_content">
 
-        <div class="input_cont">
-            <label for="question">Word</label>
-            <input id="question" name="question" />
-        </div>
+        <div class="card">
 
-        <div class="input_cont">
-            <label for="answer">Answer</label>
-            <input id="answer" name="answer" />
-        </div>
+            <h2 class="title">Vocabulary Trainer</h2>
+            <p class="subtitle">Translate the displayed word</p>
 
-        <div class="input_cont">
+            <div class="form-group">
+                <label for="question">Word</label>
+                <input id="question" name="question" />
+            </div>
+
+            <div class="form-group">
+                <label for="answer">Answer</label>
+                <input id="answer" name="answer" />
+            </div>
+
             <button class="button_next">Next</button>
+
         </div>
 
     </div>
+
+    <script>
+        function openLists() {
+            window.location.href = "/show_list";
+        }
+    </script>
 
 </body>
 </html>
-<script>
-    function openLists() {
-        window.location.href = "/show_list";
-    }
-</script>

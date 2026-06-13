@@ -22,6 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="api\add_list.py" />
+    <Compile Include="api\edit_list_item.py" />
     <Compile Include="api\show_list.py" />
     <Compile Include="database\edit_data_list.py" />
     <Compile Include="database\show_data.py" />
@@ -40,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="templates\add_list.html" />
+    <Content Include="templates\edit_words.html" />
     <Content Include="templates\index.html" />
     <Content Include="templates\show_list.html" />
     <Content Include="templates\show_words.html" />

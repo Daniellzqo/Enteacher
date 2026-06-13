@@ -1,28 +1,25 @@
-<!DOCTYPE html>
+<div class="form_card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
-    <div class="word_box">All words</div>
+    <div style="font-size:16px; font-weight:600; color:#cfe0ff;">
+        Words
+    </div>
+
+    <button class="action_btn primary"
+            onclick="showWordTransl(-1, {{ listid or 0 }})">
+        + Add new word
+    </button>
+
+</div>
+
+<table>
+    {% for w in words %}
+    <tr onclick="showWordTransl({{ w.id }}, {{ listid }})">
+        <td>{{ w.word }}</td>
+        <td>{{ w.translation }}</td>
+    </tr>
+    {% endfor %}
+</table>
 
 
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Word</th>
-            <th>Language</th>
-        </tr>
 
-        {% for wi in words %}
-        <tr>
-            <td>{{ wi.id }}</td>
-            <td>{{ wi.word }}</td>
-            <td>{{ wi.lang }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-</body>
-</html>
+

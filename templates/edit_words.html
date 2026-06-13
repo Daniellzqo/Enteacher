@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Word editor</title>
+
+    <style>
+        .form_card {
+            padding: 18px;
+            border-radius: 14px;
+            background: rgba(23, 32, 57, 0.95);
+            border: 1px solid rgba(255,255,255,0.08);
+            color: #fff;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        .form_label {
+            font-size: 13px;
+            color: #b9c7e6;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            margin: 6px 0 12px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(15,22,40,0.8);
+            color: white;
+            outline: none;
+        }
+
+        .action_btn {
+            padding: 10px 14px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: transparent;
+            color: #cfe0ff;
+            cursor: pointer;
+        }
+
+        .primary {
+            background: linear-gradient(135deg, #5d8eff, #4c6fff);
+            border: none;
+            color: white;
+        }
+
+        .title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #cfe0ff;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+       
+<body>
+
+    <div class="form_card">
+
+        <div class="title">
+            {% if mode == "edit" %}
+            Edit word
+            {% else %}
+            Add new word
+            {% endif %}
+        </div>
+
+        <form action="/api/update_word" method="post">
+
+            <!-- SAFE FALLBACKS -->
+            <input type="hidden" name="wordid" value="{{ word.id if word and word.id is defined else -1 }}">
+            <input type="hidden" name="listid" value="{{ word.listid if word and word.listid is defined else listid }}">
+
+            <div class="form_label">Word</div>
+            <input type="text"
+                   name="word"
+                   value="{{ word.word if word and word.word is defined else '' }}"
+                   required>
+
+            <div class="form_label">Translation</div>
+            <input type="text"
+                   name="translation"
+                   value="{{ word.translation if word and word.translation is defined else '' }}"
+                   required>
+
+            <div style="display:flex; gap:10px; margin-top:10px;">
+
+                <button class="action_btn primary" type="submit">
+                    Save
+                </button>
+
+                <button class="action_btn" type="button"
+                        onclick="document.getElementById('words_box').innerHTML=''">
+                    Cancel
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
